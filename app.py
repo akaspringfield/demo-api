@@ -5,6 +5,7 @@ app = Flask(__name__)
 def home():
     return {"message": "API running"}
 
+# health check api
 @app.route("/health-check")
 def health():
     return {"status": "ok"}
