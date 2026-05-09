@@ -3,9 +3,10 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return {"message": "API running"}
+    return {"message": "<h1>Version 2 deployed automatically 🎉</h1>"}
+
 
 # health check api
 @app.route("/health-check")
 def health():
-    return {"status": "ok"}
+  return {"status": "ok"}

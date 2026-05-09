@@ -1,5 +1,4 @@
-name: Python CI
-
+name: Run Tests
 on:
   pull_request:
     branches: [ main ]
@@ -9,9 +8,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -20,5 +16,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Run tests
+        run: pytest
       - name: Run app import test
         run: python -c "import app; print('App imported successfully')"
